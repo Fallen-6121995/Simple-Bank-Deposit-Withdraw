@@ -1,0 +1,5 @@
+......Please enter these Account numbres & pins to see it work......
+
+accNo=1234 & pin=1002 
+accNo=5678 & pin=1024
+accNo=9012 & pin=4567

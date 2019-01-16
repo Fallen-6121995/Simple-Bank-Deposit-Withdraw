@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ATM</title>
+        <link rel="stylesheet" type="text/css" href="Bank.css">
+    </head>
+    <body>
+       <div id=container>
+       
+        <h1>Welcome To MyBank</h1>
+        <p id="pera1">We Provide cardless transactions</p> 
+     <h3 id="peraWithdraw">Click here to withdraw</h3>
+     <h3 id="peraDeposit">Click here to Deposit</h3>
+     <button class="btn" id="btn2" onclick="deposit()" type="button">Deposit</button>
+     <button class="btn" id="btn1" onclick="withdraw()" type="button">Withdraw</button>
+     <button class="btn" id="btn3" onclick="balance()" type="button">Account Balance</button>
+        </div>
+        
+        <script type="text/javascript">
+            
+            var totalAmount=50000;
+            
+            function balance()
+            {
+                alert("Your current balance is "+totalAmount+"Rupees")
+            }
+            
+            function withdraw()
+            {
+                var accNo=parseInt(prompt("....Enter Your Account No....","Account Number"));
+                var pin=parseInt(prompt("....Enter Your pin....","Pin"));
+
+                if(accNo===1234 && pin===1002 || accNo===5678 && pin===1024 || accNo===9012 && pin===4567)
+                {
+                    var amount=parseInt(prompt("....Enter the Amount you want to withdraw....","Amount"));
+                    
+                    if(amount>=totalAmount)
+                        {
+                            alert("Amount Exceeded");
+                        }
+                    else
+                        {
+                            alert("Collect Your cash");
+                        }
+                }
+                
+                else
+                    {
+                        alert("Account Number or Pin entered is incorrect");
+                    }
+            }
+            function deposit()
+            {
+                var accountNo=parseInt(prompt("....Enter Your Account No....","Account Number"));
+                 var accPin=parseInt(prompt("....Enter Your pin....","Pin"));
+                
+                if(accountNo===1234 && accPin===1002 || accountNo===5678 && accPin===1024 || accountNo===9012 && accPin===4567)
+                    {
+                        var dep=parseInt(prompt("....Enter the amount you want to deposit...."));
+                        
+                        var rup2000=parseInt(prompt("Enter the number of 2000 Rupees note you are enering"));
+                        var rup500=parseInt(prompt("Enter the number of 500 Rupees note you are enering"));
+                        var rup200=parseInt(prompt("Enter the number of 200 Rupees note you are enering"));
+                        var rup100=parseInt(prompt("Enter the number of 100 Rupees note you are enering"));
+                        var rup50=parseInt(prompt("Enter the number of 50 Rupees note you are enering"));
+                        
+                        var denomination=(rup2000*2000)+(rup500*500)+(rup200*200)+(rup100*100)+(rup50*50);
+                        
+                        if(denomination!=dep)
+                            {
+                                alert("check your denominations");
+                            }
+                        else
+                            {
+                                alert("Your amount of"+dep+" has been deposited.Plese collect the receipt or click the picture of this message");
+                            }
+                    }
+                else
+                    {
+                         alert("Account Number or Pin entered is incorrect");
+                    }
+                    
+
+            }
+        </script>
+    </body>
+</html>
